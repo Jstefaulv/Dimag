@@ -1,0 +1,34 @@
+Día 21.09.2018.
+-Mesas. Colocar un flag de colores, mantener un sólo color de las mesas.
+-Familia y subfamilia.
+-Letras más grandes.
+-Dibujos....hacerlos más chicos.
+-Hacer combinaciones.
+-Que salgan ordenados.
+-Comandas....que salgan en un orden por productos. Que salgan sándwiches (2), pizzas (3).
+-Comanda....hacerla inteligente.
+-En las mesas ocupadas, que salga información.
+-Color mesas....que cambie una vez que sale de la plancha. Que el reloj se vea directo.
+-Tiempos: producción + consumo.
+-Mesa: sacar «mesa», dejar número.
+-Agregar «para llevar»....que se desplieguen los datos.
+
+-Mesas: dejar el contador en el extremo izquierdo.
+-El listado debe ser familia (donde se ven las imágenes), subfamilia y productos.
+
+Reunión 16.10.2018.
+-Redondeo...incorporar. Sólo en el total. Sólo con pago en efectivo.
+-Evitar el scroll...achicar.
+-Eliminar logo.
+-Tener lista de precios diferenciados (happy hour).
+
+
+Crear una vista antes de los locales
+
+Emite cuenta -> caja
+Cambiar pedido a otra mesa -> admin
+Cambiar Garzon a mesa -> admin
+Revisa mesa -> normal
+modifica pedido -> admin (eliminar producto) 
+Elimina Pedido ->admin
+Modif. N° de personas -> admin
