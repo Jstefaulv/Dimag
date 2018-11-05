@@ -78,7 +78,13 @@ class UsersTableSeeder extends Seeder
         ]);
 
         Sector::create([
-            'nombreSector' => 'Mesas',
+            'nombreSector' => 'Sector 1',
+            'nivelSector' => '1',
+            'idLocal' => 1,
+        ]);
+
+        Sector::create([
+            'nombreSector' => 'Sector 2',
             'nivelSector' => '1',
             'idLocal' => 1,
         ]);

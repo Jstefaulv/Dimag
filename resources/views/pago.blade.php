@@ -116,7 +116,7 @@
         <div class="card-footer">
             <hr>
             <div class="mr-3">
-                <a class="btn btn-danger" href="{{ url('/mesas') }}" >Cancelar</a>
+                <a class="btn btn-danger" href="{{ url('/1/mesas') }}" >Cancelar</a>
             </div>
             <div class="">
                 <button class="btn btn-success">Procesar Pago</button>

@@ -6,6 +6,7 @@ use App\Pedido;
 use App\Producto;
 use App\SubFamilia;
 use App\Mesa;
+use App\Mensaje;
 use App\DetallePedido;
 use Illuminate\Http\Request;
 
@@ -25,7 +26,19 @@ class PedidoController extends Controller
         $subfamilias = SubFamilia::get();
         $productos = Producto::get();
         $detalles = DetallePedido::where('idPedido','=',$mesa->pedido->id)->get();
-        return view('Pedidos')->with(compact('productos','subfamilias','mesa','detalles'));
+
+        $AgSan = Producto::where('idSubFamilia','=','16')->limit(13)->get();
+        $AgSan1 = Producto::where('idSubFamilia','=','16')->skip(13)->take(15)->get();
+
+        $AgPI = Producto::where('idSubFamilia','=','17')->limit(13)->get();
+        $AgPI1 = Producto::where('idSubFamilia','=','17')->skip(13)->take(15)->get();
+
+        $AgPG = Producto::where('idSubFamilia','=','18')->limit(13)->get();
+        $AgPG1 = Producto::where('idSubFamilia','=','18')->skip(13)->take(15)->get();
+
+        $mensajes = Mensaje::limit(14)->get();
+        $mensajes1 = Mensaje::skip(14)->take(14)->get();
+        return view('Pedidos')->with(compact('productos','subfamilias','mesa','detalles','mensajes','mensajes1','AgSan','AgSan1','AgPI','AgPI1','AgPG','AgPG1'));
     }
     
     /**

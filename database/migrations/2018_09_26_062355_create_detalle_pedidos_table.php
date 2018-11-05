@@ -24,8 +24,8 @@ class CreateDetallePedidosTable extends Migration
             $table->integer('idPedido')->unsigned();
             $table->foreign('idPedido')->references('id')->on('pedidos');
 
-            $table->integer('idAgregado')->unsigned()->nullable();
-            $table->foreign('idAgregado')->references('id')->on('agregados');
+            $table->integer('idMensaje')->unsigned()->nullable();
+            $table->foreign('idMensaje')->references('id')->on('mensajes');
             $table->timestamps();
         });
     }

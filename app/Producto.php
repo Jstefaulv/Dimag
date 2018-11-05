@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $id
  * @property string $nombreProducto
  * @property int $precioProducto
- * @property string $RecetaProducto
  * @property int $idSubFamilia
  * @property string $created_at
  * @property string $updated_at
@@ -17,9 +16,16 @@ use Illuminate\Database\Eloquent\Model;
 class Producto extends Model
 {
     /**
+     * The table associated with the model.
+     * 
+     * @var string
+     */
+    protected $table = 'Productos';
+
+    /**
      * @var array
      */
-    protected $fillable = ['nombreProducto', 'precioProducto', 'RecetaProducto', 'idSubFamilia', 'created_at', 'updated_at'];
+    protected $fillable = ['nombreProducto', 'precioProducto', 'idSubFamilia', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

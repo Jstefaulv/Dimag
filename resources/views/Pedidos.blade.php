@@ -52,6 +52,22 @@ img {
 					Bebida
 					<img src="{{asset('img/bebida.png')}}" style="width: 90px; height: 90px; display: block; margin: auto;">
 				</button>
+
+				<button class="btn btn-primary btn-lg" style="color: white; padding: 10px 0; font-size:140%;width: 100%;" onclick="menuProd16();">
+					Ag. Sand.
+				</button>
+
+				<button class="btn btn-primary btn-lg" style="color: white; padding: 10px 0; font-size:140%;width: 100%;" onclick="menuProd17()">
+					Ag. Pizza I.
+				</button>
+
+				<button class="btn btn-primary btn-lg" style="color: white; padding: 10px 0; font-size:140%;width: 100%;" onclick="menuProd18()">
+					Ag. Pizza G.
+				</button>
+
+				<button class="btn btn-primary btn-lg" style="color: white; padding: 10px 10px; font-size:140%;width: 100%;" onclick="menuProd19()">
+					Mensaje
+				</button>
 			</div>
 			<!--------------------------------------------------------------------------->
  			<!-- 							FIN PRODUCTOS					   		   -->
@@ -87,6 +103,38 @@ img {
 							{{ $subfamilia->NombreSubFamilia }}
 						</button>
 						@endif
+					@endforeach
+				</div>
+
+				<div id="menuProd16" style="display: none;">
+					@foreach($AgSan as $agregado)
+						<button class="btn btn-primary" style="color: white; width: 100%;" onclick="cargarProdcuto('{{ $agregado->nombreProducto }}','{{ $agregado->precioProducto }}','{{ $agregado->id }}')">
+							{{ $agregado->nombreProducto }}
+						</button>
+					@endforeach
+				</div>
+
+				<div id="menuProd17" style="display: none;">
+					@foreach($AgPI as $agregado)
+						<button class="btn btn-primary" style="color: white; width: 100%;" onclick="cargarProdcuto('{{ $agregado->nombreProducto }}','{{ $agregado->precioProducto }}','{{ $agregado->id }}')">
+							{{ $agregado->nombreProducto }}
+						</button>
+					@endforeach
+				</div>
+
+				<div id="menuProd18" style="display: none;">
+					@foreach($AgPG as $agregado)
+						<button class="btn btn-primary" style="color: white; width: 100%;" onclick="cargarProdcuto('{{ $agregado->nombreProducto }}','{{ $agregado->precioProducto }}','{{ $agregado->id }}')">
+							{{ $agregado->nombreProducto }}
+						</button>
+					@endforeach
+				</div>
+
+				<div id="menuProd19" style="display: none;">
+					@foreach($mensajes as $mensaje)
+						<button class="btn btn-primary" style="color: white; width: 100%;" onclick="cargarMensaje('{{$mensaje->mensajes}}');">
+							{{ $mensaje->mensajes }}
+						</button>
 					@endforeach
 				</div>
 			</div>
@@ -226,6 +274,38 @@ img {
 						@endif
 					@endforeach
 				</div>
+
+				<div id="AgregadoSandwich" style="display: none;">
+					@foreach($AgSan1 as $agregado)
+						<button class="btn btn-primary" style="color: white; width: 100%;" onclick="cargarProdcuto('{{ $agregado->nombreProducto }}','{{ $agregado->precioProducto }}','{{ $agregado->id }}')">
+							{{ $agregado->nombreProducto }}
+						</button>
+					@endforeach
+				</div>
+				
+				<div id="AgregadoPizzaI" style="display: none;">
+					@foreach($AgPI1 as $agregado)
+						<button class="btn btn-primary" style="color: white; width: 100%;" onclick="cargarProdcuto('{{ $agregado->nombreProducto }}','{{ $agregado->precioProducto }}','{{ $agregado->id }}')">
+							{{ $agregado->nombreProducto }}
+						</button>
+					@endforeach
+				</div>
+
+				<div id="AgregadoPizzaG" style="display: none;">
+					@foreach($AgPG1 as $agregado)
+						<button class="btn btn-primary" style="color: white; width: 100%;" onclick="cargarProdcuto('{{ $agregado->nombreProducto }}','{{ $agregado->precioProducto }}','{{ $agregado->id }}')">
+							{{ $agregado->nombreProducto }}
+						</button>
+					@endforeach
+				</div>
+
+				<div id="MenuMensajes" style="display: none;">
+					@foreach($mensajes1 as $mensaje)
+						<button class="btn btn-primary" style="color: white; width: 100%;" onclick="cargarMensaje('{{$mensaje->mensajes}}');">
+							{{ $mensaje->mensajes }}
+						</button>
+					@endforeach
+				</div>
 			</div>
 			<!-- FIN MENU PRODUCTOS -->
 			<!-- INICIO DETALLE PEDIDO -->
@@ -257,7 +337,7 @@ img {
 								</div>
 								<div class="w-100"></div>
 								<div class="col-12">
-									<textarea class="form-control" name="observacion" id="" cols="30" rows="3"></textarea>
+									<textarea class="form-control" placeholder="Observación" name="observacion" id="obsv" cols="30" rows="3"></textarea>
 								</div>
 							</div>
 						</div>
@@ -335,9 +415,10 @@ img {
 
 		</div>
 		<div class="col-2">
-			<a href="{{ url('/'.$mesa->idSector.'/mesas') }}" class="btn btn-warning ml-auto"><i class="material-icons">arrow_back</i> Volver</a>
+			<a href="{{ url('/'.$mesa->idSector.'/mesas') }}" class="btn btn-warning ml-auto"><i class="material-icons">arrow_back</i>Volver</a>
 		</div>
-	</div><hr>
+	</div>
+	<hr>
 	</div>
 @endsection
 @section('script')

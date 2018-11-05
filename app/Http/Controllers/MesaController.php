@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Mesa;
+use App\DetallePedido;
 use Illuminate\Http\Request;
 
 class MesaController extends Controller
@@ -19,13 +20,13 @@ class MesaController extends Controller
     public function index($id)
     {
         $mesas = Mesa::where('idSector','=',$id)->get();
-        if($id == 2){
-            return view('barra')->with(compact('mesas'));
-        }else if($id == 3){
-            return view('otros')->with(compact('mesas'));
+        $detallePedidos = DetallePedido::get();
+        if($id == 3){
+            return view('barra')->with(compact('mesas','detallePedidos'));
+        }else if($id == 4){
+            return view('otros')->with(compact('mesas','detallePedidos'));
         }
-        return view('Mesa')->with(compact('mesas'));
-
+        return view('Mesa')->with(compact('mesas','detallePedidos'));
     }
 
     /**
@@ -94,12 +95,11 @@ class MesaController extends Controller
         //
     }
 
-    public function AsignarCantidad(Request $request){
-        $mesa = Mesa::find($request->input('id'));
+    public function AsignarCantidad(Request $request,$idMesa){
+        $mesa = Mesa::find($idMesa);
         $mesa->cantidad = $request->input('cantidad');
-        $mesa->estado = 'Consumiendo';
         $mesa->save();
         //se debe modificar para agregar productos.
-        return back();
+        return redirect('/mesa/'.$mesa->id.'/pedido');
     }
 }

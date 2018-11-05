@@ -33,6 +33,14 @@ class FamiliasTableSeeder extends Seeder
   			'NombreFamilia' => "Menú",
   		]);
 
+      Familia::create([
+        'NombreFamilia' => "Agregados",
+      ]);
+
+      Familia::create([
+        'NombreFamilia' => "Mensajes",
+      ]);
+
 
   		//SUBFAMILIAS SANDWICH
   		SubFamilia::create([
@@ -108,5 +116,23 @@ class FamiliasTableSeeder extends Seeder
   			'NombreSubFamilia' => "Menú", 
   			'idFamilia' => 5,
   		]);
+
+      //SUBFAMILIA AGREGADOS
+      SubFamilia::create([
+        'NombreSubFamilia' => "Agregados Sandwich", 
+        'idFamilia' => 6,
+      ]);
+      SubFamilia::create([
+        'NombreSubFamilia' => "Agregados Pizza Individual", 
+        'idFamilia' => 6,
+      ]);
+      SubFamilia::create([
+        'NombreSubFamilia' => "Agregados Pizza Grande", 
+        'idFamilia' => 6,
+      ]);
+      SubFamilia::create([
+        'NombreSubFamilia' => "Mensajes", 
+        'idFamilia' => 7,
+      ]);
     }
 }

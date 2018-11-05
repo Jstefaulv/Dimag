@@ -11,7 +11,7 @@ class EstadoPedidoTableSeeder extends Seeder{
      */
     public function run(){
      	EstadoPedido::create([
-     		'EstadoPedido' => 'Libre',
+     		'EstadoPedido' => 'Activo',
      	]);
      	EstadoPedido::create([
      		'EstadoPedido' => 'Produccion',

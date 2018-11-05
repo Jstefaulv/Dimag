@@ -7,10 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @property int $id
  * @property string $Observacion
+ * @property int $cantidad
  * @property int $idProducto
  * @property int $idPedido
+ * @property int $idMensaje
  * @property string $created_at
  * @property string $updated_at
+ * @property Mensaje $mensaje
  * @property Pedido $pedido
  * @property Producto $producto
  */
@@ -26,7 +29,15 @@ class DetallePedido extends Model
     /**
      * @var array
      */
-    protected $fillable = ['Observacion', 'idProducto', 'idPedido', 'created_at', 'updated_at'];
+    protected $fillable = ['Observacion', 'cantidad', 'idProducto', 'idPedido', 'idMensaje', 'created_at', 'updated_at'];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function mensaje()
+    {
+        return $this->belongsTo('App\Mensaje', 'idMensaje');
+    }
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

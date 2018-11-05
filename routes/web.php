@@ -32,7 +32,7 @@ Route::get('/{id}/mesas','MesaController@index');
 | Rutas Pedidos
 |--------------------------------------------------------------------------
 */
-Route::post('/mesas','MesaController@AsignarCantidad');
+Route::post('/mesas/{idMesa}','MesaController@AsignarCantidad');
 Route::get('/mesa/{id}/pedido','PedidoController@index');
 
 Route::post('/mesa/{idMesa}/addprod','DetallePedidoController@store');
